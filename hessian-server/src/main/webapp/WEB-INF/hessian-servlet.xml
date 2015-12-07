@@ -1,0 +1,11 @@
+<beans xmlns="http://www.springframework.org/schema/beans"  
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">  
+   
+  <bean id="addServiceImpl" class="com.licq.hessian.service.impl.AddServiceImpl" />  
+   
+  <bean name="/addService.html" class="org.springframework.remoting.caucho.HessianServiceExporter"  >  
+    <property name="service" ref="addServiceImpl" />
+    <property name="serviceInterface" value="com.licq.hessian.service.AddService" />  
+  </bean>  
+</beans> 
